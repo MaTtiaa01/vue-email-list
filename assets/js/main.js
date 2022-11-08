@@ -26,7 +26,16 @@ createApp({
         }
     },
     mounted(){
+        
         this.getEmail()
+        //try to add bonus
+
+        // document.onreadystatechange = () => {
+        //     if (document.readyState == "complete") {
+        //         this.getEmail()
+        //       console.log('Page completed with image and files!')
+        //     }
+        //   }
     }
 
 }).mount("#app")
