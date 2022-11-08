@@ -10,7 +10,8 @@ const {createApp} = Vue;
 createApp({
     data(){
         return{
-            emails : []
+            emails : null,
+            newArray : []
         }
     },
     methods : {
@@ -20,14 +21,22 @@ createApp({
                     .get("https://flynn.boolean.careers/exercises/api/random/mail")
                     .then(response =>{
                         console.log(response.data.response);
-                        this.emails.push(response.data.response)
+                        this.newArray.push(response.data.response)
                     })
             }
+        },
+        printInPage(){
+            this.emails = this.newArray
         }
+
     },
     mounted(){
         
         this.getEmail()
+        setTimeout(()=>{
+            this.printInPage()
+
+        },1000)
         //try to add bonus
 
         // document.onreadystatechange = () => {
